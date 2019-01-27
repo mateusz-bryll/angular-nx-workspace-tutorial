@@ -13,6 +13,9 @@
     },
     "todo-web-e2e": {
       "tags": []
+    },
+    "shared-angular-material-loader": {
+      "tags": ["shared"]
     }
   }
 }

@@ -6,13 +6,16 @@ import { NxModule } from '@nrwl/nx';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { AngularMaterialLoaderModule } from '@ngt/shared/angular-material-loader';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     NxModule.forRoot(),
     RouterModule.forRoot([], { initialNavigation: 'enabled' }),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularMaterialLoaderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

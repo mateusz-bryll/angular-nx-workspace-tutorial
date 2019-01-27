@@ -27,7 +27,7 @@
               "apps/todo-web/src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "./libs/shared/angular-material-loader/theme.scss",
               "apps/todo-web/src/styles.scss"
             ],
             "scripts": []
@@ -101,9 +101,7 @@
               "apps/todo-web/tsconfig.app.json",
               "apps/todo-web/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -129,10 +127,39 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/todo-web-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
+        }
+      }
+    },
+    "shared-angular-material-loader": {
+      "root": "libs/shared/angular-material-loader",
+      "sourceRoot": "libs/shared/angular-material-loader/src",
+      "projectType": "library",
+      "prefix": "ngt",
+      "architect": {
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "libs/shared/angular-material-loader/src/test.ts",
+            "tsConfig": "libs/shared/angular-material-loader/tsconfig.spec.json",
+            "karmaConfig": "libs/shared/angular-material-loader/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/angular-material-loader/tsconfig.lib.json",
+              "libs/shared/angular-material-loader/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/schematics:component": {
+          "styleext": "scss"
         }
       }
     }

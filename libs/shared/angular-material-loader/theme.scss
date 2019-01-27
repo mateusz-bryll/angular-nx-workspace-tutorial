@@ -1,0 +1,40 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$md-light: (
+    50 : #e9e0f0,
+    100 : #c9b3da,
+    200 : #a580c1,
+    300 : #814da8,
+    400 : #662695,
+    500 : #4b0082,
+    600 : #44007a,
+    700 : #3b006f,
+    800 : #330065,
+    900 : #230052,
+    A100 : #ad85ff,
+    A200 : #8b52ff,
+    A400 : #691fff,
+    A700 : #5805ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$light-todo-app-primary: mat-palette($md-light);
+$light-todo-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$light-todo-app-theme:   mat-light-theme($light-todo-app-primary, $light-todo-app-accent);
+@include angular-material-theme($light-todo-app-theme);

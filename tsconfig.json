@@ -12,7 +12,11 @@
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2017", "dom"],
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ngt/shared/angular-material-loader": [
+        "libs/shared/angular-material-loader/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
